@@ -17,7 +17,7 @@ jobs:
       with:
         rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
-    # Rclone Sync to B2 & R2
+    # Rclone Sync
     - name: Rclone Sync 
       run: |
-          rclone copy ./ RiaAliyunOSS:fst-static-api --transfers=8 --checkers=16 --exclude=.git/** --exclude=.github/**
+          rclone copy ./ RiaAliyunOSS:/fst-static-api --transfers=8 --checkers=16 --exclude=.git/** --exclude=.github/**
