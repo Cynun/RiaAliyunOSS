@@ -1,0 +1,10 @@
+{
+  "skip": [
+    "shaderpacks",
+    "saves",
+    "logs",
+    "PCL",
+    "Update",
+    "CustomSkinLoader\\caches"
+  ]
+}
