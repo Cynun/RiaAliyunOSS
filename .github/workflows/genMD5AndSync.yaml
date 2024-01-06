@@ -1,0 +1,35 @@
+name: deploy to aliyun oss
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clone MD5 Generator
+      run: git clone https://github.com/LynnGuo666/MD5Generate.git 
+      
+    - name: Run MD5 Generator
+      uses: actions/setup-python@v1
+        with:
+          python-version: '3.x'
+          architecture: 'x64'
+      run: |
+          pip install requirements.txt
+          echo "./\nR\nJSON\n" | python main.py
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    # Setup Rclone
+    - name: Setup Rclone
+      uses: AnimMouse/setup-rclone@v1
+      with:
+        rclone_config: ${{ secrets.RCLONE_CONFIG }}
+
+    # Rclone Sync
+    #- name: Rclone Sync 
+    #  run: |
+    #      rclone copy ./ RiaAliyunOSS:/fst-static-api/ --transfers=8 --checkers=16 --exclude=.git/** --exclude=.github/**
