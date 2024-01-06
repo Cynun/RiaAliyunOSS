@@ -22,6 +22,7 @@ jobs:
           cd MD5Generate
           pip install -r requirements.txt
           echo "./\nR\nJSON\n" > python main.py
+          ls
 
     - name: Checkout
       uses: actions/checkout@v3
