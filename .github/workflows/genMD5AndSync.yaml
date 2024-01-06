@@ -19,7 +19,7 @@ jobs:
     
     - name: Run MD5 Generator
       run: |
-          pip install requirements.txt
+          pip install -r requirements.txt
           echo "./\nR\nJSON\n" | python main.py
 
     - name: Checkout
