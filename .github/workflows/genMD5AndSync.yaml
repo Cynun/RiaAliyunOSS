@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Clone MD5 Generator
-      run: git clone https://github.com/LynnGuo666/MD5Generate.git 
+      run: git clone https://github.com/Cynun/MD5Generate.git 
       
     - name: Setup Python
       uses: actions/setup-python@v1
