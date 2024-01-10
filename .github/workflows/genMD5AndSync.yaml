@@ -22,7 +22,7 @@ jobs:
           cd MD5Generate
           pip install -r requirements.txt
           cd ..
-          python main.py -c -d ./
+          python ./MD5Generate/main.py -c -d ./
           ls
 
     - name: Checkout
