@@ -8,23 +8,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clone MD5 Generator
-      run: git clone https://github.com/Cynun/MD5Generate.git 
-      
-    - name: Setup Python
-      uses: actions/setup-python@v1
-      with:
-        python-version: '3.x'
-        architecture: 'x64'
-    
-    - name: Run MD5 Generator
-      run: |
-          cd MD5Generate
-          pip install -r requirements.txt
-          cd ..
-          python ./MD5Generate/main.py -c -d ./
-          ls
-
     - name: Checkout
       uses: actions/checkout@v3
 
