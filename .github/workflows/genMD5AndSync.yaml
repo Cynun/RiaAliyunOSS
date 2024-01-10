@@ -21,7 +21,8 @@ jobs:
       run: |
           cd MD5Generate
           pip install -r requirements.txt
-          echo "./\nR\nJSON\n" | python main.py
+          cd ..
+          python main.py -c -d ./
           ls
 
     - name: Checkout
